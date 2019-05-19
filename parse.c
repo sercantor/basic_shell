@@ -1,19 +1,18 @@
 #include "parse.h"
 
 char **parse_line(char *line) {
-    char **words;
-    words = (char**)malloc(sizeof(void*)*MAX/2);
-    if(words == NULL){
+    char **command = (char**)malloc(sizeof(void*)*MAX/2);
+    if(command == NULL){
 	perror("error when allocating");
 	exit(1);
     }
 
-    int windex = 0;
-    while( (*(words+windex) = strsep(&line, " \n")) != 0x00)
-	windex++;
+    int cindex = 0;
+    while( (*(command+cindex) = strsep(&line, " \n")) != 0x00)
+	cindex++;
     /*
      * getline adds \n at the end of the string, we don't want that
      */
-    words[windex-1] = 0x00;
-    return words;
+    command[cindex-1] = 0x00;
+    return command;
 }

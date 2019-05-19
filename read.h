@@ -2,4 +2,4 @@
 #include "execute.h"
 #include "parse.h"
 
-void read_line();
+char *read_line();

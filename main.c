@@ -9,8 +9,11 @@
 int main() {
     char dir[PATH_MAX];
     getcwd(dir, sizeof(dir));
-    while(1){
-	printf("%s> ", dir);
-	read_line();
+    char *line;
+
+    while(1){ 
+	printf("[ %s ]$ ", dir);
+	line = read_line();
+	execute(parse_line(line));
     }
 }

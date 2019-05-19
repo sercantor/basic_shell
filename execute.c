@@ -4,11 +4,18 @@ void execute(char **command) {
     pid_t pid;
     pid = fork();
 
-    if(pid == 0){
-	if(execvp(command[0], command) == -1)
-	    printf("you entered a wrong command\n");
+    if( pid == -1 ) {
+	printf("\n Failed forking");
+	return;
+    } else if ( pid == 0 ) {
+	if ( execvp(command[0], command) < 0 ) {
+	    printf("\nCould not execute command\n");
+	}
+	exit(0);
+    } else {
+	wait(NULL);
+	return;
     }
-    else if(pid == -1){
-	perror("error when forking");
-    }
+
+
 }
