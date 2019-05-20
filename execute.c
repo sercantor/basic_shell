@@ -13,6 +13,8 @@ void execute(char **command) {
 	}
 	exit(0);
     } else {
+	/* waiting for the child to execute
+	 */
 	wait(NULL);
 	return;
     }
