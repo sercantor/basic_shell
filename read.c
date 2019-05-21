@@ -6,6 +6,10 @@ char *read_line(){
     char *line = NULL;
     size_t size;
 
-    getline(&line, &size, stdin);
+    /* if EOF, exit the program */
+    if( getline(&line, &size, stdin) == -1 ) {
+	exit(1);
+    }
+
     return line;
 }

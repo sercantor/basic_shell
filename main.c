@@ -7,15 +7,11 @@
 
 #define MAX_PATH 256
 
+/* reads, parses and executes, no pipes for now */
 int main() {
-    /*
-     * can not ctrl+d (EOF) out of the terminal, because
-     * in the read function we don't have
-     * while( getline > 0 )
-     */
     char *line;
     char **command;
-    char *dir = malloc(MAX_PATH*sizeof(char));
+    char *dir = (char*)malloc(MAX_PATH*sizeof(char));
  
     while(1){ 
 	getcwd(dir, 256);

@@ -9,6 +9,6 @@
 - [x] Interpreter sign doesn't work, fix that
 - [ ] In the main file, the function usage is wonky, find a better way around that
 - [ ] Need to find a better way to implement built-in commands
-- [ ] ctrl+d (EOF) doesn't work, because we dont use while(getline >0), I have to find a better implementation
+- [x] ctrl+d (EOF) doesn't work, because we dont use while(getline >0), I have to find a better implementation
 - [ ] If I can find a way, I want to add pipes
-- [ ] Provide more comments to easily explain the program
+- [x] Provide more comments to easily explain the program

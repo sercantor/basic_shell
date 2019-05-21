@@ -8,11 +8,9 @@ char **parse_line(char *line) {
     }
 
     int cindex = 0;
-    while( (*(command+cindex) = strsep(&line, " \n")) != 0x00)
+    while( (*(command+cindex) = strsep(&line, " \n")) != 0x00 )
 	cindex++;
-    /*
-     * getline adds \n at the end of the string, we don't want that
-     */
+     /* getline adds \n at the end of the string, we don't want that */
     command[cindex-1] = 0x00;
     return command;
 }
