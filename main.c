@@ -5,6 +5,8 @@
 #include "parse.h"
 #include "read.h"
 
+#define MAX_PATH 256
+
 int main() {
     /*
      * can not ctrl+d (EOF) out of the terminal, because
@@ -13,12 +15,17 @@ int main() {
      */
     char *line;
     char **command;
+    char *dir = malloc(MAX_PATH*sizeof(char));
+ 
     while(1){ 
-	printf("$ ");
+	getcwd(dir, 256);
+	printf("[ %s ]$ ", dir);
 	line = read_line();
 	command = parse_line(line);
+
 	/* built-in commands, will move them somewhere, this is very bad */
 	if ( !strcmp(command[0], "cd") ) {
+
 	    chdir(command[1]);
 	}
 	else if ( !strcmp(command[0], "exit") ) {
@@ -30,4 +37,5 @@ int main() {
 	free(line);
 	free(command);
     }
+    free(dir);
 }
