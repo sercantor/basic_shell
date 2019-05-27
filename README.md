@@ -2,6 +2,7 @@
 
  - A very simple program that follows the principle of a simple shell, it reads stdin, parses the command, and executes with execvp.
  - Before it executes, it forks the process.
+ - You can install it by cloning this project and simply typing make to console.
 
 ## TODO
 
