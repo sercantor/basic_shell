@@ -8,7 +8,7 @@ char *read_line(){
 
     /* if EOF, exit the program */
     if( getline(&line, &size, stdin) == -1 ) {
-	exit(1);
+	exit(0);
     }
 
     return line;

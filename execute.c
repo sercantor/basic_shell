@@ -1,9 +1,9 @@
 #include "execute.h"
 
-void execute(char **command) {
+void execute(char **command){
     pid_t pid;
     pid = fork();
-
+     
     if( pid == -1 ) {
 	printf("\n Failed forking");
 	return;
@@ -21,3 +21,4 @@ void execute(char **command) {
 
 
 }
+    
