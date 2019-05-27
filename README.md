@@ -12,3 +12,4 @@
 - [x] ctrl+d (EOF) doesn't work, because we dont use while(getline >0), I have to find a better implementation
 - [ ] If I can find a way, I want to add pipes
 - [x] Provide more comments to easily explain the program
+- [x] Adding redirection, although it's way easier than pipes
